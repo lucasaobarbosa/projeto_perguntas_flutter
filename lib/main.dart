@@ -10,7 +10,12 @@ class PerguntaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //Criando uma instância
     return MaterialApp(
-      home: Text('Olá Flutter!!'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Perguntas'),
+        ),
+        body: Text('Olá Flutter!!!'),
+      ),
     );
   }
 }
