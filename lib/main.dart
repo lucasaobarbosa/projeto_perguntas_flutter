@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 
 //Criando uma instânica
 main () => runApp(PerguntaApp());
-                          // Chamando a herança de Widget
-class PerguntaApp extends StatelessWidget {
-
-  var perguntaSelecionada = 1;
+                          
+class PerguntaAppState extends State<PerguntaApp> {
+  var perguntaSelecionada = 0;
 
   void responder(){
-  perguntaSelecionada ++;
+  setState(() {
+  perguntaSelecionada ++;   
+  });
   print(perguntaSelecionada);
-}
+  }
 
   final perguntas = [
     'Qual é a sua cor favorita?',
     'Qual é o seu animal favorito?',
   ];
 
-  @override      //Criando método build
+    @override      //Criando método build
   Widget build(BuildContext context) {
     //Criando uma instância
     return MaterialApp(
@@ -44,5 +45,11 @@ class PerguntaApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}                         
+                          // Chamando a herança de Widget
+class PerguntaApp extends StatefulWidget {
+  PerguntaAppState createState(){
+    return PerguntaAppState();
   }
 }
